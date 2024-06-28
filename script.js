@@ -1,3 +1,39 @@
+function rollDice() {
+    // Generate a random number between 1 and 6
+    const randomNumber1 = Math.floor(Math.random() * 6) + 1;
+    const randomNumber2 = Math.floor(Math.random() * 6) + 1;
+
+    // Add class invisibility to all dots
+    const dots = document.querySelectorAll(".dot");
+    dots.forEach((dot) => {
+        dot.classList.add("invisible");
+    });
+    // Remove class rollSix from dot--1 if it exists
+    const dot1 = document.querySelectorAll(".dot--1");
+    dot1.forEach((dot) => { 
+        dot.classList.remove("rollSix");
+    });
+
+    winnerDisplay(randomNumber1, randomNumber2);
+    // Display the result of the dice roll
+   displayResult(randomNumber1, "dice--1");
+   displayResult(randomNumber2, "dice--2"); 
+   
+}
+
+function winnerDisplay(dice1, dice2) {
+    const winner = document.querySelector(".winner");
+    if(dice1 > dice2) {
+        winner.textContent = "Player 1 wins!";
+    } else if(dice1 < dice2) {
+        winner.textContent = "Player 2 wins!";
+    } else {
+        winner.textContent = "It's a tie!";
+    }
+
+    document.querySelector(".winner").classList.remove("invisible");
+}
+
 function displayResult(diceResult, dice)  {
      //Based on random number, run the corresponding method 
     //to display appropriate dots
@@ -23,28 +59,7 @@ function displayResult(diceResult, dice)  {
     }
 }
 
-function rollDice() {
-    // Generate a random number between 1 and 6
-    const randomNumber1 = Math.floor(Math.random() * 6) + 1;
-    const randomNumber2 = Math.floor(Math.random() * 6) + 1;
 
-    // Add class invisibility to all dots
-    const dots = document.querySelectorAll(".dot");
-    dots.forEach((dot) => {
-        dot.classList.add("invisible");
-    });
-    // Remove class rollSix from dot--1 if it exists
-    const dot1 = document.querySelectorAll(".dot--1");
-    dot1.forEach((dot) => { 
-        dot.classList.remove("rollSix");
-    });
-
-    console.log("Dice 1: ",randomNumber1);
-    console.log("Dice 2: ", randomNumber2);
-   displayResult(randomNumber1, "dice--1");
-   displayResult(randomNumber2, "dice--2"); 
-   
-}
 
 function displayOne(diceNumber) {
     // Remove invisibility from the first dot
