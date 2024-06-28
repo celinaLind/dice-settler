@@ -25,7 +25,7 @@ function displayResult(diceResult, dice)  {
 
 function rollDice() {
     // Generate a random number between 1 and 6
-    const randomNumber1 = Math.floor(Math.random() * 6) + 1;
+    // const randomNumber1 = Math.floor(Math.random() * 6) + 1;
     const randomNumber2 = Math.floor(Math.random() * 6) + 1;
 
     // Add class invisibility to all dots
@@ -34,13 +34,14 @@ function rollDice() {
         dot.classList.add("invisible");
     });
     // Remove class rollSix from dot--1 if it exists
-    if (document.getElementsByClassName("dot--1")[0].classList.contains("rollSix")) {
-        document.getElementsByClassName("dot--1")[0].classList.remove("rollSix");
-    }
+    const dot1 = document.querySelectorAll(".dot--1");
+    dot1.forEach((dot) => { 
+        dot.classList.remove("rollSix");
+    });
 
-    console.log("Dice 1: ",randomNumber1);
+    // console.log("Dice 1: ",randomNumber1);
     console.log("Dice 2: ", randomNumber2);
-   displayResult(randomNumber1, "dice--1");
+//    displayResult(randomNumber1, "dice--1");
    displayResult(randomNumber2, "dice--2"); 
    
 }
@@ -58,26 +59,23 @@ function displayTwo(diceNumber) {
 
 function displayThree(diceNumber) {
     // Remove invisibility from the first, second and third dot
-    document.querySelector(`.${diceNumber} .dot--1`).classList.remove("invisible");
-    document.querySelector(`.${diceNumber} .dot--2`).classList.remove("invisible");
-    document.querySelector(`.${diceNumber} .dot--3`).classList.remove("invisible");
+    for (let i = 1; i <= 3; i++) {
+        document.querySelector(`.${diceNumber} .dot--${i}`).classList.remove("invisible");
+    }
 }
 
 function displayFour(diceNumber) {
     // Remove invisibility from the second, third, fourth, and fifth dot
-    document.querySelector(`.${diceNumber} .dot--2`).classList.remove("invisible");
-    document.querySelector(`.${diceNumber} .dot--3`).classList.remove("invisible");
-    document.querySelector(`.${diceNumber} .dot--4`).classList.remove("invisible");
-    document.querySelector(`.${diceNumber} .dot--5`).classList.remove("invisible");
+    for(let i = 2; i <= 5; i++){  
+        document.querySelector(`.${diceNumber} .dot--${i}`).classList.remove("invisible");
+    }
 }
 
 function displayFive(diceNumber) {
     // Remove invisibility from the first, second, third, fourth, and fifth dot
-    document.getElementsByClassName("dot--1")[0].classList.remove("invisible");
-    document.getElementsByClassName("dot--2")[0].classList.remove("invisible");
-    document.getElementsByClassName("dot--3")[0].classList.remove("invisible");
-    document.getElementsByClassName("dot--4")[0].classList.remove("invisible");
-    document.getElementsByClassName("dot--5")[0].classList.remove("invisible");
+    for (let i = 1; i <= 5; i++) {
+        document.querySelector(`.${diceNumber} .dot--${i}`).classList.remove("invisible");
+    }
 }
 
 function displaySix(diceNumber) {
