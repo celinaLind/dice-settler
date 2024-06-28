@@ -9,6 +9,10 @@ h1 {
     text-shadow: 2px 2px 4px #000000;
 }
 
+.invisible {
+    display: none;
+}
+
 h2 {
     color: white;
     font-size: 1.5em;
@@ -32,7 +36,7 @@ h2 {
 
 .dice-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     margin: 20px 0;
 
