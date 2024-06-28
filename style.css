@@ -20,6 +20,9 @@ h2 {
     text-shadow: 2px 2px 4px #000000;
 }
 
+
+
+
 .winner {
     background-color: #e8a4ee62;
     color:#5f2677;
@@ -48,7 +51,17 @@ h2 {
     align-items: center;
     margin: 20px 0;
 
-    .dice {
+.dice__side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   .player {
+    color:white;
+    font-family: serif;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 4px #e8a4ee;
+} 
+.dice {
         margin: 5px;
         background-color: teal;
         height: 200px;
@@ -99,4 +112,7 @@ h2 {
             left: 70%;
         }
     }
+
+}
+    
 }
