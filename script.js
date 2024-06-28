@@ -25,7 +25,7 @@ function displayResult(diceResult, dice)  {
 
 function rollDice() {
     // Generate a random number between 1 and 6
-    // const randomNumber1 = Math.floor(Math.random() * 6) + 1;
+    const randomNumber1 = Math.floor(Math.random() * 6) + 1;
     const randomNumber2 = Math.floor(Math.random() * 6) + 1;
 
     // Add class invisibility to all dots
@@ -39,9 +39,9 @@ function rollDice() {
         dot.classList.remove("rollSix");
     });
 
-    // console.log("Dice 1: ",randomNumber1);
+    console.log("Dice 1: ",randomNumber1);
     console.log("Dice 2: ", randomNumber2);
-//    displayResult(randomNumber1, "dice--1");
+   displayResult(randomNumber1, "dice--1");
    displayResult(randomNumber2, "dice--2"); 
    
 }
