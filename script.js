@@ -37,6 +37,9 @@ function rollDice() {
     if (document.getElementsByClassName("dot--1")[0].classList.contains("rollSix")) {
         document.getElementsByClassName("dot--1")[0].classList.remove("rollSix");
     }
+
+    console.log("Dice 1: ",randomNumber1);
+    console.log("Dice 2: ", randomNumber2);
    displayResult(randomNumber1, "dice--1");
    displayResult(randomNumber2, "dice--2"); 
    
@@ -56,7 +59,7 @@ function displayTwo(diceNumber) {
 function displayThree(diceNumber) {
     // Remove invisibility from the first, second and third dot
     document.querySelector(`.${diceNumber} .dot--1`).classList.remove("invisible");
-    document.querySelector(`.${diceNumber} .dot--2`).classList.remove("invisibile");
+    document.querySelector(`.${diceNumber} .dot--2`).classList.remove("invisible");
     document.querySelector(`.${diceNumber} .dot--3`).classList.remove("invisible");
 }
 
@@ -82,7 +85,7 @@ function displaySix(diceNumber) {
     document.querySelector(`.${diceNumber} .dot--1`).classList.add("rollSix");
 
     // Remove invisibility from all dots
-    const dots = document.querySelectorAll(`.${diceNumber}.dot`);
+    const dots = document.querySelectorAll(`.${diceNumber} .dot`);
     dots.forEach((dot) => {
         dot.classList.remove("invisible");
     });
