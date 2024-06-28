@@ -20,6 +20,14 @@ h2 {
     text-shadow: 2px 2px 4px #000000;
 }
 
+.winnerText {
+    background-color: #e8a4ee62;
+    color:#5f2677;
+    font-family: sans-serif;
+    font-size: 2.4em;
+    text-shadow: 2px 2px 4px #e8a4ee;
+}
+
 .btn {
     background-color: #4CAF50 !important;
     border: none;
